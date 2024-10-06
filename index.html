@@ -104,7 +104,10 @@
     <button id="bouttonMonPanier" onclick="showPanier()">Mon panier</button>
     <button id="bouttonAccueil" onclick="showAccueil()" class="hidden">accueil</button>
     <div id="container" >
-        <img src="C:\Users\Timothée PIOTRE\OneDrive\Images\gingembre.jpg">
+        <script>
+            var quantitee = 0
+        </script>
+        <img src="gingembre.jpg">
         <h3>gingembre frais</h3>
         <button id="button_round_less" onclick="lessOne()">-</button>
         <button onclick="commander10()">commander(1ss)</button>
@@ -112,7 +115,7 @@
     </div>
     <div id="monPanier" class="hidden">
         <div id="contenuPanier" class="hidden">
-            <img src="C:\Users\Timothée PIOTRE\OneDrive\Images\gingembre.jpg">
+            <img src="gingembre.jpg">
             <h3>gingembre frais</h3>
             <h4 id="quantity">ss</h4>
         </div>
@@ -122,7 +125,7 @@
     </footer>
 </body>
 <script>
-    var quantitee = 0
+    
     
     function commander10() {
         let message10 = "pour confirmer votre achat envoyez 1ss a @THEvenger en mettant en motif le code : 10/1ss";
