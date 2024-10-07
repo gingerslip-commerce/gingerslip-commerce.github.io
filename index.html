@@ -110,7 +110,7 @@
         <img src="gingembre.jpg">
         <h3>gingembre frais</h3>
         <button id="button_round_less" onclick="lessOne()">-</button>
-        <button onclick="commander10()">commander(1ss)</button>
+        <button onclick="commander10()"> 1 ss </button>
         <button id="button_round_plus" onclick="adOne()">+</button>
     </div>
     <div id="monPanier" class="hidden">
@@ -132,28 +132,7 @@
         alert(message10);
     }
 
-    function commander100() {
-        let message100 = "pour confirmer votre achat envoyez 10ss a @THEvenger en mettant en motif le code : 100/10ss";
-        alert(message100);
-    }
-
-    function commander500() {
-        let message500 = "pour confirmer votre achat envoyez 50ss a @THEvenger en mettant en motif le code : 500/50ss";
-        alert(message500);
-    }
-
-    function commander1000() {
-        let message1000 = "pour confirmer votre achat envoyez 100ss a @THEvenger en mettant en motif le code : 1000/100ss";
-        alert(message1000);
-    }
-    function adOne(){
-        quantitee+=1;
-        alert(article ajouté!!);
-    }    
-    function lessOne(){
-        quantitee-=1;
-        alert(article ajouté!!)
-    }
+    
     function showPanier() {
         document.getElementById("monPanier").classList.remove("hidden")
         document.getElementById("container").classList.add("hidden")
@@ -167,7 +146,7 @@
         document.getElementById("bouttonAccueil").classList.add("hidden")
         if (quantité > 0){
             document.getElementById("contenuPanier").classList.remove("hidden")
-
+            document.getElementById("monPanier").classList.remove("hidden")
         }
 
     }
