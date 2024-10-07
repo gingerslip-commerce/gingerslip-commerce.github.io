@@ -110,9 +110,9 @@
         </script>
         <img src="gingembre.jpg">
         <h3>gingembre frais</h3>
-        <button id="button_round_less" onclick="lessOne()">-</button>
-        <button onclick="commander10()"> 1 ss </button>
-        <button id="button_round_plus" onclick="adOne()">+</button>
+        <button id="button_round_less" onclick="less()" >-</button>
+        <button id="quantity" >ss</button>
+        <button id="button_round_plus" onclick="plus()" >+</button>
     </div>
     <div id="monPanier" class="hidden">
         <div id="contenuPanier" class="hidden">
@@ -132,11 +132,11 @@
         let message10 = "pour confirmer votre achat envoyez 1ss a @THEvenger en mettant en motif le code : ${quantitee}/1ss";
         alert(message10);
     }
-    function adOne() {
+    function plus() {
         n = n + 1;
     }
 
-    function lessOne() {
+    function less() {
         n = n - 1;
     }
     function showPanier() {
