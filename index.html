@@ -194,7 +194,7 @@
         document.getElementById("titreAccueil").classList.add("hidden");
         document.getElementById("titrePanier").classList.remove("hidden");
         document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-        document.getElementById("Total").innerHTML= total + ' ss';
+        document.getElementById("Total").innerHTML= Math.round(total*10) + ' ss';
         document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
         document.getElementById("validationdecommande").classList.add("hidden")
         var total=n*0.2
@@ -202,13 +202,13 @@
             document.getElementById("contenuPanier").classList.remove("hidden");
             document.getElementById("monPanier").classList.remove("hidden");
             document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-            document.getElementById("Total").innerHTML= total + ' ss';
+            document.getElementById("Total").innerHTML= Math.round(total*10) + ' ss';
         }
         if (n <= 0){
             document.getElementById("contenuPanier").classList.add("hidden");
             document.getElementById("monPanier").classList.add("hidden");
             document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-            document.getElementById("Total").innerHTML= total + ' ss';
+            document.getElementById("Total").innerHTML= Math.round(total*10) + ' ss';
         }
     }
     function showAccueil() {
