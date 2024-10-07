@@ -129,31 +129,31 @@
     
     
     function commander10() {
-        let message10 = "pour confirmer votre achat envoyez 1ss a @THEvenger en mettant en motif le code : 10/1ss";
+        let message10 = "pour confirmer votre achat envoyez 1ss a @THEvenger en mettant en motif le code : ${quantitee}/1ss";
         alert(message10);
     }
     function adOne() {
-        quantitee=quantitee+1
+        quantitee=quantitee+1;
     }
 
     function lessOne() {
-        quantitee=quantitee-1
+        quantitee=quantitee-1;
     }
     function showPanier() {
-        document.getElementById("monPanier").classList.remove("hidden")
-        document.getElementById("container").classList.add("hidden")
-        document.getElementById("bouttonMonPanier").classList.add("hidden")
-        document.getElementById("bouttonAccueil").classList.remove("hidden")
+        document.getElementById("monPanier").classList.remove("hidden");
+        document.getElementById("container").classList.add("hidden");
+        document.getElementById("bouttonMonPanier").classList.add("hidden");
+        document.getElementById("bouttonAccueil").classList.remove("hidden");
         if (quantité > 0){
-            document.getElementById("contenuPanier").classList.remove("hidden")
-            document.getElementById("monPanier").classList.remove("hidden")
+            document.getElementById("contenuPanier").classList.remove("hidden");
+            document.getElementById("monPanier").classList.remove("hidden");
         }
     }
     function showAccueil() {
-        document.getElementById("monPanier").classList.add("hidden")
-        document.getElementById("container").classList.remove("hidden")
-        document.getElementById("bouttonMonPanier").classList.remove("hidden")
-        document.getElementById("bouttonAccueil").classList.add("hidden")
+        document.getElementById("monPanier").classList.add("hidden");
+        document.getElementById("container").classList.remove("hidden");
+        document.getElementById("bouttonMonPanier").classList.remove("hidden");
+        document.getElementById("bouttonAccueil").classList.add("hidden");
         
 
     }
