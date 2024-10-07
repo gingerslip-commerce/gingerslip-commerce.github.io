@@ -100,12 +100,13 @@
     <header>
         <h1>Gingerslip-commerce</h1>
     </header>
-    <h2>pour vos achats de gingembre c'est ici !!!</h2>
+    <h2 id="bouttonMonPanier" >pour vos achats de gingembre c'est ici !!!</h2>
     <button id="bouttonMonPanier" onclick="showPanier()">Mon panier</button>
+    <h2 id="monPanier" class="hidden">votre panier</h2>
     <button id="bouttonAccueil" onclick="showAccueil()" class="hidden">accueil</button>
     <div id="container" >
         <script>
-            var n = 0
+            let n = 0;
         </script>
         <img src="gingembre.jpg">
         <h3>gingembre frais</h3>
