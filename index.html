@@ -131,8 +131,13 @@
         let message10 = "pour confirmer votre achat envoyez 1ss a @THEvenger en mettant en motif le code : 10/1ss";
         alert(message10);
     }
+    function adOne() {
+        quantitee += 1
+    }
 
-    
+    function lessOne() {
+        quantitee -= 1
+    }
     function showPanier() {
         document.getElementById("monPanier").classList.remove("hidden")
         document.getElementById("container").classList.add("hidden")
