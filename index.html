@@ -106,7 +106,7 @@
     <h3 id="quantity"></h3>
     <div id="container" >
         <script>
-            var quantitee = 0
+            var n = 0
         </script>
         <img src="gingembre.jpg">
         <h3>gingembre frais</h3>
@@ -122,7 +122,7 @@
         </div>
     </div>
     <footer>
-        <h7>Développer par THEvenger</h7>
+        <h7>Développé par THEvenger</h7>
     </footer>
 </body>
 <script>
@@ -133,11 +133,11 @@
         alert(message10);
     }
     function adOne() {
-        quantitee=quantitee+1;
+        n = n + 1;
     }
 
     function lessOne() {
-        quantitee=quantitee-1;
+        n = n - 1;
     }
     function showPanier() {
         document.getElementById("monPanier").classList.remove("hidden");
@@ -157,6 +157,6 @@
         
 
     }
-    document.getElementById("quantity").innerHTML = quantitee;
+    document.getElementById("quantity").innerHTML = n;
 </script>
 </html>
