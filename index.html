@@ -103,6 +103,7 @@
     <h2>pour vos achats de gingembre c'est ici !!!</h2>
     <button id="bouttonMonPanier" onclick="showPanier()">Mon panier</button>
     <button id="bouttonAccueil" onclick="showAccueil()" class="hidden">accueil</button>
+    <h3 id="quantity"></h3>
     <div id="container" >
         <script>
             var quantitee = 0
@@ -143,16 +144,17 @@
         document.getElementById("container").classList.add("hidden")
         document.getElementById("bouttonMonPanier").classList.add("hidden")
         document.getElementById("bouttonAccueil").classList.remove("hidden")
+        if (quantité > 0){
+            document.getElementById("contenuPanier").classList.remove("hidden")
+            document.getElementById("monPanier").classList.remove("hidden")
+        }
     }
     function showAccueil() {
         document.getElementById("monPanier").classList.add("hidden")
         document.getElementById("container").classList.remove("hidden")
         document.getElementById("bouttonMonPanier").classList.remove("hidden")
         document.getElementById("bouttonAccueil").classList.add("hidden")
-        if (quantité > 0){
-            document.getElementById("contenuPanier").classList.remove("hidden")
-            document.getElementById("monPanier").classList.remove("hidden")
-        }
+        
 
     }
     document.getElementById("quantity").innerHTML = quantitee;
