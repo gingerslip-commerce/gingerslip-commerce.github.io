@@ -100,9 +100,9 @@
     <header>
         <h1>Gingerslip-commerce</h1>
     </header>
-    <h2 id="bouttonMonPanier" >pour vos achats de gingembre c'est ici !!!</h2>
+    <h2 id="titreAccueil" >pour vos achats de gingembre c'est ici !!!</h2>
     <button id="bouttonMonPanier" onclick="showPanier()">Mon panier</button>
-    <h2 id="monPanier" class="hidden">votre panier</h2>
+    <h2 id="titrePanier" class="hidden">votre panier</h2>
     <button id="bouttonAccueil" onclick="showAccueil()" class="hidden">accueil</button>
     <div id="container" >
         <script>
@@ -144,6 +144,8 @@
         document.getElementById("container").classList.add("hidden");
         document.getElementById("bouttonMonPanier").classList.add("hidden");
         document.getElementById("bouttonAccueil").classList.remove("hidden");
+        document.getElementById("titreAccueil").classList.add("hidden");
+        document.getElementById("titrePanier").classList.remove("hidden");
         if (quantité > 0){
             document.getElementById("contenuPanier").classList.remove("hidden");
             document.getElementById("monPanier").classList.remove("hidden");
@@ -154,6 +156,8 @@
         document.getElementById("container").classList.remove("hidden");
         document.getElementById("bouttonMonPanier").classList.remove("hidden");
         document.getElementById("bouttonAccueil").classList.add("hidden");
+        document.getElementById("titrePanier").classList.add("hidden");
+        document.getElementById("titreAccueil").classList.remove("hidden");
         
 
     }
