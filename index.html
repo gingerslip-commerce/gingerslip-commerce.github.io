@@ -47,6 +47,19 @@
             align-items: center;   
             margin-bottom: 20px; 
         }
+
+        .pub {
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px;
+            border: 3px solid black;
+            border-radius: 80px;
+            background-color: red;
+            color: black;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;   
+            margin-bottom: 20px; 
+        }
         .promotion {
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             display: flex;
@@ -54,6 +67,7 @@
             align-items: center;   
             margin-bottom: 20px;           
         }
+        
 
         .button_round_plus {
             border-radius: 50%;
@@ -67,21 +81,9 @@
             border-radius: 50%;
             text-align: center;
             position: absolute;
-            margin-left: 50px;
+            margin-left: 50px; 
         }
-        h4 {
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            background-color: orange;
-            border: none;
-            padding: 1rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            align-items: center;
-            border-radius: 20px;
-            margin-bottom: 20px;     
-            position: absolute;
-            margin-left: 5px;       
-        }
+        
         .closead {
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             background-color: red;
@@ -127,11 +129,9 @@
 <body>
     <header>
         <h1>Gingerslip-commerce</h1>
-        <h1 id="commander1">En ce moment moins 50% sur le gingembre frais !!!</h1>
-        <button id="commander" onclick="showAccueil()">commander</button>
     </header>
-    <h2 id="titreAccueil" >pour vos achats de gingembre c'est ici !!!</h2>
-    <button id="bouttonMonPanier" onclick="showPanier()"></button>
+    <h2 id="titreAccueil" class="hidden">pour vos achats de gingembre c'est ici !!!</h2>
+    <button id="bouttonMonPanier" onclick="showPanier()" class="hidden"></button>
     <h2 id="titrePanier" class="hidden">votre panier</h2>
     <button id="bouttonAccueil" onclick="showAccueil()" class="hidden">accueil</button>
     <div id="container" class="hidden">
@@ -140,9 +140,14 @@
         </script>
         <img src="gingembre.jpg">
         <h3>gingembre frais</h3>
+        <h4>0.2 ss l'unitée</h4>
         <button id="button_round_less" onclick="less()" >-</button>
-        <button >0.2 ss</button>
+        <button id="Total"></button>
         <button id="button_round_plus" onclick="plus()" >+</button>
+    </div>
+    <div id="pub">
+        <h1 id="commander1">En ce moment moins 50% sur le gingembre frais !!!</h1>
+        <button id="commander" onclick="showAccueil()">commander</button>
     </div>
     <div id="monPanier" class="hidden">
         <div id="contenuPanier" class="hidden">
@@ -163,7 +168,7 @@
 <script>
     
     
-    
+    var total=n*0.2
     function commander10() {
         let message10 = "pour confirmer votre achat envoyez 1ss a @THEvenger en mettant en motif le code : ${quantitee}/1ss";
         alert(message10);
@@ -172,18 +177,20 @@
         n = n + 1;
         var total=n*0.2
         document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
+        document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
     }
 
     function less() {
         n = n - 1;
         var total=n*0.2
         document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
+        document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
     }
 
     function valider() {
         document.getElementById("validationdecommande").classList.remove("hidden");
         document.getElementById("monPanier").classList.add("hidden");
-        document.getElementById("valider").innerHTML = "pour confirmer votre achat envoyez "+Math.round(n*0.2 * 10)/10 +" ss a @THEvenger en saisisant le code promo : -50/peauneuve en motif de l'envoi d'argent"
+        document.getElementById("valider").innerHTML = "pour confirmer votre achat envoyez "+Math.round(n*0.2*10)/10+" ss a @THEvenger en saisisant le code promo : -50/peauneuve en motif de l'envoi d'argent";
         
     }
     function showPanier() {
@@ -194,7 +201,7 @@
         document.getElementById("titreAccueil").classList.add("hidden");
         document.getElementById("titrePanier").classList.remove("hidden");
         document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-        document.getElementById("Total").innerHTML= Math.round(total*10)/10 + ' ss';
+        document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
         document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
         document.getElementById("validationdecommande").classList.add("hidden")
         var total=n*0.2
@@ -202,13 +209,13 @@
             document.getElementById("contenuPanier").classList.remove("hidden");
             document.getElementById("monPanier").classList.remove("hidden");
             document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-            document.getElementById("Total").innerHTML= Math.round(total*10)/10 + ' ss';
+            document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
         }
         if (n <= 0){
             document.getElementById("contenuPanier").classList.add("hidden");
             document.getElementById("monPanier").classList.add("hidden");
             document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-            document.getElementById("Total").innerHTML= Math.round(total*10)/10 + ' ss';
+            document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
         }
     }
     function showAccueil() {
@@ -219,17 +226,16 @@
         document.getElementById("bouttonAccueil").classList.add("hidden");
         document.getElementById("titrePanier").classList.add("hidden");
         document.getElementById("titreAccueil").classList.remove("hidden");
-        document.getElementById("commander").classList.add("hidden");
-        document.getElementById("commander1").classList.add("hidden");
+        document.getElementById("pub").classList.add("hidden");
         document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-        document.getElementById("Total").innerHTML= total + ' ss';
+        document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
         document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
         var total=n*0.2
         
 
     }
     document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-    document.getElementById("Total").innerHTML= math.round(total * 10) + ' ss';
+    document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
     document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
 </script>
 </html>
