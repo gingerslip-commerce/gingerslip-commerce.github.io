@@ -95,15 +95,15 @@
         }
         .bouttonMonPanier {
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            background-color: red;
+            background-color: orange;
             border: none;
             padding: 1rem;
             cursor: pointer;
             padding: 0.5rem 1rem;
             border-radius: 20px;
             margin-bottom: 20px;
-            position: relative;
-            margin-up: 15px;
+            position: absolute;
+            margin-left: 15px;
         }
         img {
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -130,11 +130,14 @@
         <h1 id="commander1">En ce moment moins 50% sur le gingembre frais !!!</h1>
         <button id="commander" onclick="showAccueil()">commander</button>
     </header>
-    <h2 id="titreAccueil2" class="hidden">pour vos achats de gingembre c'est ici !!!</h2>
+    <h2 id="titreAccueil" >pour vos achats de gingembre c'est ici !!!</h2>
     <button id="bouttonMonPanier" onclick="showPanier()"></button>
     <h2 id="titrePanier" class="hidden">votre panier</h2>
     <button id="bouttonAccueil" onclick="showAccueil()" class="hidden">accueil</button>
     <div id="container" class="hidden">
+        <script>
+            let n = 0;
+        </script>
         <img src="gingembre.jpg">
         <h3>gingembre frais</h3>
         <button id="button_round_less" onclick="less()" >-</button>
@@ -158,7 +161,9 @@
     </footer>
 </body>
 <script>
-    let n = 0;
+    
+    
+    
     function commander10() {
         let message10 = "pour confirmer votre achat envoyez 1ss a @THEvenger en mettant en motif le code : ${quantitee}/1ss";
         alert(message10);
@@ -182,6 +187,7 @@
         
     }
     function showPanier() {
+        document.getElementById("monPanier").classList.remove("hidden");
         document.getElementById("container").classList.add("hidden");
         document.getElementById("bouttonMonPanier").classList.add("hidden");
         document.getElementById("bouttonAccueil").classList.remove("hidden");
@@ -215,7 +221,6 @@
         document.getElementById("titreAccueil").classList.remove("hidden");
         document.getElementById("commander").classList.add("hidden");
         document.getElementById("commander1").classList.add("hidden");
-        document.getElementById("titreAccueil2").classList.remove("hidden");
         document.getElementById("quantity").innerHTML= n + ' gingembres frais';
         document.getElementById("Total").innerHTML= total + ' ss';
         document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
