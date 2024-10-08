@@ -183,7 +183,7 @@
     function valider() {
         document.getElementById("validationdecommande").classList.remove("hidden");
         document.getElementById("monPanier").classList.add("hidden");
-        document.getElementById("valider").innerHTML = "pour confirmer votre achat envoyez "+(n*0.2)+" ss a @THEvenger en saisisant le code promo : -50/peauneuve en motif de l'envoi d'argent"
+        document.getElementById("valider").innerHTML = "pour confirmer votre achat envoyez "+Math.round(total * 10)/10" ss a @THEvenger en saisisant le code promo : -50/peauneuve en motif de l'envoi d'argent"
         
     }
     function showPanier() {
