@@ -95,15 +95,15 @@
         }
         .bouttonMonPanier {
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            background-color: orange;
+            background-color: red;
             border: none;
             padding: 1rem;
             cursor: pointer;
             padding: 0.5rem 1rem;
             border-radius: 20px;
             margin-bottom: 20px;
-            position: absolute;
-            margin-left: 15px;
+            position: relative;
+            margin-up: 15px;
         }
         img {
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -187,7 +187,6 @@
         
     }
     function showPanier() {
-        document.getElementById("monPanier").classList.remove("hidden");
         document.getElementById("container").classList.add("hidden");
         document.getElementById("bouttonMonPanier").classList.add("hidden");
         document.getElementById("bouttonAccueil").classList.remove("hidden");
