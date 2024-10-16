@@ -95,25 +95,53 @@
             position: absolute;
             margin-left: 150px;
         }
-        .bouttonMonPanier {
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            background-color: orange;
-            border: none;
-            padding: 1rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            position: absolute;
-            margin-left: 15px;
-        }
-        img {
+
+        #gingembre6 {
+            display: block;
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             padding: 10px;
             background-color: white;
             border: 3px solid black;
-            border-radius: 80px;
+            border-radius: 50px;
             margin-top: 20px;
+            position: relative;
+            left: 570px;
+            width: 400px;
+            height: 400px;
+        }
+
+        #gingembre7 {
+            display: block;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 50px;
+            margin-top: 20px;
+            position: relative;
+            left: 570px;
+            width: 400px;
+            height: 400px;
+        }
+        #g7 {
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 50px;
+            margin-top: 20px;
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        #g6 {
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 50px;
+            margin-top: 20px;
+            position: relative;
             width: 400px;
             height: 400px;
         }
@@ -124,11 +152,21 @@
         .hidden {
             display: none;
         }
+        #logo {
+            padding: 10px;           
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            position: relative;
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Gingerslip-commerce</h1>
+        
+        <h1> <img id="logo" src="logo-ginger.png"> Gingerslip-commerce <img id="logo" src="logo-ginger.png"></h1>
     </header>
     <h2 id="titreAccueil" class="hidden">pour vos achats de gingembre c'est ici !!!</h2>
     <button id="bouttonMonPanier" onclick="showPanier()" class="hidden"></button>
@@ -137,32 +175,36 @@
     <div id="container" class="hidden">
         <script>
             let n = 0;
+            s = 0;
         </script>
-        <img src="gingembre3.jpg">
+        <img id="gingembre6" src="gingembre3.jpg">
         <h3>gingembre frais</h3>
         <h4>0.2 ss l'unitée</h4>
         <button id="button_round_less" onclick="less()" >-</button>
-        <button id="Total"></button>
+        <button id="Total2"></button>
         <button id="button_round_plus" onclick="plus()" >+</button>
+        <img id="gingembre6" src="gingembrecongele.jpg">
+        <h3>gingembre surgelés</h3>
+        <h4>3 ss l'unitée</h4>
+        <button id="button_round_less" onclick="lesssurgelés()" >-</button>
+        <button id="Total3"></button>
+        <button id="button_round_plus" onclick="plussurgelés()" >+</button>
     </div>
     <div id="pub">
-        <h1 id="commander1">En ce moment moins 50% sur le gingembre frais !!!</h1>
+        <h1 id="commander1">Bienvenu sur notre site. Nous sommes ravi de vous accueillir !!!</h1>
         <button id="commander" onclick="showAccueil()">commander</button>
     </div>
     <div id="monPanier" class="hidden">
-        <div id="contenuPanier" class="hidden">
-            <img src="gingembre.jpg">
-            <h3 id="quantity"></h3>
-            <h3 id="Total"></h3>
-        </div>
-        <button onclick="valider()">valider la commande</button>
+        <img id="g6"src="gingembre3.jpg">
+        <h3 id="quantity" class="hidden"></h3>
+        <img id="g7" src="gingembrecongele.jpg">
+        <h3 id="quantity2" class="hidden"></h3>
+        <h3 id="Total" class="hidden"></h3>
+        <button id="validerlacommande" onclick="valider()">valider la commande</button>
     </div>
     <div id="validationdecommande" class="hidden">
         <h3>Merci pour votre commande !!!</h3>
         <h3 id="valider"></h3>
-    </div>
-    <div>
-        <img src="logo_gingerslip-commerce.jpg">
     </div>
     <footer>
         <h7>Développé par THEvenger</h7>
@@ -178,50 +220,76 @@
     }
     function plus() {
         n = n + 1;
+        v=n+s
         var total=n*0.2
-        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
-        document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
+        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+v+")";
+        document.getElementById("Total2").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
     }
 
     function less() {
         n = n - 1;
-        var total=n*0.2
-        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
-        document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
+        v = n + s
+        var total=n*0.2+s*3
+        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+v+")";
+        document.getElementById("Total2").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
+    }
+    function plussurgelés() {
+        s = s + 1;
+        v=n+s
+        var total=s*3+n*0.2+s*3
+        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+v+")";
+        document.getElementById("Total3").innerHTML= Math.round(s*3*10)/10 + ' ss';
     }
 
+    function lesssurgelés() {
+        s = s - 1;
+        v=n+s
+        var total=s*3+n*0.2
+        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+v+")";
+        document.getElementById("Total3").innerHTML= Math.round(s*3*10)/10 + ' ss';
+    }
     function valider() {
         document.getElementById("validationdecommande").classList.remove("hidden");
         document.getElementById("monPanier").classList.add("hidden");
-        document.getElementById("valider").innerHTML = "pour confirmer votre achat envoyez "+Math.round(n*0.2*10)/10+" ss a @THEvenger en saisisant le code promo : -50/peauneuve en motif de l'envoi d'argent";
+        document.getElementById("valider").innerHTML = "pour confirmer votre achat envoyez "+Math.round(t*10)/10+" ss a @THEvenger en saisisant en motif \""+n+"gingembres frais/"+s+"gingembres surgelés\"";
         
     }
     function showPanier() {
+        v=n+s
+        t=(n*0.2)+(s*3)
         document.getElementById("monPanier").classList.remove("hidden");
+        document.getElementById("g6").classList.add("hidden");
+        document.getElementById("Total").classList.add("hidden");
+        document.getElementById("g7").classList.add("hidden");
+        document.getElementById("quantity").classList.add("hidden");
+        document.getElementById("quantity2").classList.add("hidden");
         document.getElementById("container").classList.add("hidden");
         document.getElementById("bouttonMonPanier").classList.add("hidden");
         document.getElementById("bouttonAccueil").classList.remove("hidden");
         document.getElementById("titreAccueil").classList.add("hidden");
         document.getElementById("titrePanier").classList.remove("hidden");
         document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-        document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
-        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
-        document.getElementById("validationdecommande").classList.add("hidden")
-        var total=n*0.2
+        document.getElementById("Total").innerHTML= Math.round(n*0.2+s*3*10)/10 + ' ss';
+        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+v+")";
+        document.getElementById("validationdecommande").classList.add("hidden");
+        var total=n*0.2+s*3
         if (n > 0){
-            document.getElementById("contenuPanier").classList.remove("hidden");
-            document.getElementById("monPanier").classList.remove("hidden");
+            document.getElementById("g6").classList.remove("hidden");
+            document.getElementById("quantity").classList.remove("hidden");
             document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-            document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
+            document.getElementById("Total").classList.remove("hidden");
+            document.getElementById("Total").innerHTML= Math.round(t*10)/10 + ' ss';
         }
-        if (n <= 0){
-            document.getElementById("contenuPanier").classList.add("hidden");
-            document.getElementById("monPanier").classList.add("hidden");
-            document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-            document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
+        if (s > 0){
+            document.getElementById("g7").classList.remove("hidden");
+            document.getElementById("quantity2").classList.remove("hidden");
+            document.getElementById("quantity2").innerHTML= s + ' gingembres surgelés';
+            document.getElementById("Total").classList.remove("hidden");
+            document.getElementById("Total").innerHTML= Math.round(t*10)/10 + ' ss';
         }
     }
     function showAccueil() {
+        v=n+s
         document.getElementById("validationdecommande").classList.add("hidden")
         document.getElementById("monPanier").classList.add("hidden");
         document.getElementById("container").classList.remove("hidden");
@@ -231,14 +299,15 @@
         document.getElementById("titreAccueil").classList.remove("hidden");
         document.getElementById("pub").classList.add("hidden");
         document.getElementById("quantity").innerHTML= n + ' gingembres frais';
-        document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
-        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
+        document.getElementById("Total2").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
+        document.getElementById("Total3").innerHTML= Math.round(s*3*10)/10 + ' ss';
+        document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+v+")";
         var total=n*0.2
         
 
     }
     document.getElementById("quantity").innerHTML= n + ' gingembres frais';
     document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
-    document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+n+")";
+        document.getElementById("Total3").innerHTML= Math.round(s*3*10)/10 + ' ss';
 </script>
 </html>
