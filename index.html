@@ -97,26 +97,29 @@
         }
 
         #gingembre6 {
+            display: block;
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             padding: 10px;
             background-color: white;
             border: 3px solid black;
             border-radius: 50px;
             margin-top: 20px;
-            
+            position: relative;
+            left: 37%;
             width: 400px;
             height: 400px;
         }
 
         #gingembre7 {
-
+            display: block;
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             padding: 10px;
             background-color: white;
             border: 3px solid black;
             border-radius: 50px;
             margin-top: 20px;
-            
+            position: relative;
+            left: 37%;
             width: 400px;
             height: 400px;
         }
@@ -127,7 +130,6 @@
             border: 3px solid black;
             border-radius: 50px;
             margin-top: 20px;
-            position: relative;
             width: 400px;
             height: 400px;
         }
@@ -138,7 +140,6 @@
             border: 3px solid black;
             border-radius: 50px;
             margin-top: 20px;
-            position: relative;
             width: 400px;
             height: 400px;
         }
@@ -149,31 +150,24 @@
         .hidden {
             display: none;
         }
-        #logo1 {
+        #logo {
             padding: 10px;           
             border-radius: 50%;
             width: 90px;
             height: 90px;
             position: relative;
-            bottom: 10px;
-            right:200px;
+            top: 45px;
         }
-        #logo2 {
-            padding: 10px;           
-            border-radius: 50%;
-            width: 90px;
-            height: 90px;
+        #titre2Accueil {
             position: relative;
-            bottom: 10px;
-            left:200px;
+            bottom: 40px
         }
-
     </style>
 </head>
 <body>
     <header>
         
-        <h1> <img id="logo1" src="logo-ginger.png"> Gingerslip-commerce <img id="logo2" src="logo-ginger.png"></h1>
+        <h1 id="titre2Accueil"><img id="logo" src="logo-ginger.png"> Gingerslip-commerce<img id="logo" src="logo-ginger.png"></h1>
     </header>
     <h2 id="titreAccueil" class="hidden">pour vos achats de gingembre c'est ici !!!</h2>
     <button id="bouttonMonPanier" onclick="showPanier()" class="hidden"></button>
