@@ -288,9 +288,11 @@
         document.getElementById("Total").innerHTML= Math.round(n*0.2+s*3*10)/10 + ' ss';
         document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+v+")";
         document.getElementById("validationdecommande").classList.add("hidden");
+        document.getElementById("validerlacommande").classList.add("hidden");
         var total=n*0.2+s*3
         if (n > 0){
             document.getElementById("g6").classList.remove("hidden");
+            document.getElementById("validerlacommande").classList.remove("hidden");
             document.getElementById("quantity").classList.remove("hidden");
             document.getElementById("quantity").innerHTML= n + ' gingembres frais';
             document.getElementById("Total").classList.remove("hidden");
@@ -298,6 +300,7 @@
         }
         if (s > 0){
             document.getElementById("g7").classList.remove("hidden");
+            document.getElementById("validerlacommande").classList.remove("hidden");
             document.getElementById("quantity2").classList.remove("hidden");
             document.getElementById("quantity2").innerHTML= s + ' gingembres surgelés';
             document.getElementById("Total").classList.remove("hidden");
