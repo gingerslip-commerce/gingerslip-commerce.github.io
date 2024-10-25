@@ -314,13 +314,13 @@
     }
     function showAccueil() {
         v=n+s
-        document.getElementById("validationdecommande").classList.add("hidden")
-        document.getElementById("monPanier").classList.add("hidden");
+        document.getElementById("titreAccueil").classList.remove("hidden");
         document.getElementById("container").classList.remove("hidden");
         document.getElementById("bouttonMonPanier").classList.remove("hidden");
+        document.getElementById("validationdecommande").classList.add("hidden")
+        document.getElementById("monPanier").classList.add("hidden");
         document.getElementById("bouttonAccueil").classList.add("hidden");
         document.getElementById("titrePanier").classList.add("hidden");
-        document.getElementById("titreAccueil").classList.remove("hidden");
         document.getElementById("pub").classList.add("hidden");
         document.getElementById("quantity").innerHTML= n + ' gingembres frais';
         document.getElementById("Total2").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
