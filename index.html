@@ -207,7 +207,7 @@
     </div>
     <div id="pub">
         <h1 id="commander1">Bienvenu sur notre site. Nous sommes ravi de vous accueillir !!!</h1>
-        <button  onclick="showAccueil()">commander</button>
+        <button id="commander" onclick="showAccueil()">commander</button>
     </div>
     <div id="monPanier" class="hidden">
         <img id="g6"src="gingembre3.jpg">
@@ -312,8 +312,7 @@
             document.getElementById("paniervide").classList.remove("hidden")
             document.getElementById("paniervide").innerHTML= "votre panier est vide !!"
     }
-    function showAccueil() 
-        alert("y a une couille")
+    function showAccueil() {
         document.getElementById("titreAccueil").classList.remove("hidden");
         document.getElementById("container").classList.remove("hidden");
         document.getElementById("bouttonMonPanier").classList.remove("hidden");
