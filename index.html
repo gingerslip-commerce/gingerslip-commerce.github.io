@@ -308,11 +308,13 @@
             document.getElementById("Total").classList.remove("hidden");
             document.getElementById("Total").innerHTML= Math.round(t*10)/10 + ' ss';
         }
-        if (s <= 0) and (n <= 0){
+        if ((s <= 0) && (n <= 0)) {
             document.getElementById("paniervide").classList.remove("hidden")
             document.getElementById("paniervide").innerHTML= "votre panier est vide !!"
+        }
     }
     function showAccueil() {
+        alert("y a une couille")
         document.getElementById("titreAccueil").classList.remove("hidden");
         document.getElementById("container").classList.remove("hidden");
         document.getElementById("bouttonMonPanier").classList.remove("hidden");
@@ -328,9 +330,7 @@
         document.getElementById("bouttonMonPanier").innerHTML='Mon panier ('+v+")";
         var total=n*0.2
         document.getElementById("paniervide").classList.add("hidden")
-        
-
-    }
+        }
     document.getElementById("quantity").innerHTML= n + ' gingembres frais';
     document.getElementById("Total").innerHTML= Math.round(n*0.2*10)/10 + ' ss';
         document.getElementById("Total3").innerHTML= Math.round(s*3*10)/10 + ' ss';
